@@ -1,0 +1,8 @@
+{
+  "name": "Remix Bazar Admin Panel",
+  "description": "Comprehensive Admin \u0026 Merchant Control Panel for Bazar E-Commerce platform with real-time Firestore sync, bilingual Bangla/English support, analytics, product \u0026 order management, customer directory, Royal Club campaign engine, and moderation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

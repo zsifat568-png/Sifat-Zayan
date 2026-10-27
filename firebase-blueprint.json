@@ -1,0 +1,182 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "E-Commerce catalog product item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string", "maxLength": 200 },
+        "titleBn": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "descriptionBn": { "type": "string", "maxLength": 2000 },
+        "category": { "type": "string", "maxLength": 100 },
+        "tags": { "type": "array" },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "discountPercentage": { "type": "number" },
+        "stock": { "type": "number" },
+        "lowStockLimit": { "type": "number" },
+        "images": { "type": "array" },
+        "badges": { "type": "array" },
+        "isActive": { "type": "boolean" },
+        "rating": { "type": "number" },
+        "reviewCount": { "type": "number" },
+        "sku": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "category", "price", "stock", "isActive"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer purchase order and delivery logistics state",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "customerEmail": { "type": "string" },
+        "deliveryAddress": { "type": "string" },
+        "district": { "type": "string" },
+        "areaNote": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "deliveryFee": { "type": "number" },
+        "discountTotal": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "transactionId": { "type": "string" },
+        "isTxIdVerified": { "type": "boolean" },
+        "status": { "type": "string" },
+        "courierName": { "type": "string" },
+        "trackingNumber": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "adminNotes": { "type": "string" }
+      },
+      "required": ["customerName", "customerPhone", "grandTotal", "status"]
+    },
+    "CustomerUser": {
+      "title": "CustomerUser",
+      "description": "Registered customer profile and reward points",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" },
+        "joinedDate": { "type": "string" },
+        "completedOrdersCount": { "type": "number" },
+        "totalSpent": { "type": "number" },
+        "rewardPoints": { "type": "number" },
+        "customDiscountPercentage": { "type": "number" },
+        "status": { "type": "string" },
+        "defaultAddress": { "type": "string" }
+      },
+      "required": ["name", "phone", "status"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Product review submitted by customer",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productTitle": { "type": "string" },
+        "productImage": { "type": "string" },
+        "userName": { "type": "string" },
+        "userPhone": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "isVerifiedPurchase": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "adminReply": { "type": "string" },
+        "adminRepliedAt": { "type": "string" }
+      },
+      "required": ["productId", "userName", "rating", "comment"]
+    },
+    "RoyalClubCampaignSettings": {
+      "title": "RoyalClubCampaignSettings",
+      "description": "Bazar Royal Club spin wheel & campaign config",
+      "type": "object",
+      "properties": {
+        "campaignActive": { "type": "boolean" },
+        "offerName": { "type": "string" },
+        "cooldownHours": { "type": "number" },
+        "minPurchaseAmount": { "type": "number" },
+        "slices": { "type": "array" },
+        "userOverrides": { "type": "array" }
+      },
+      "required": ["campaignActive", "offerName"]
+    },
+    "HeroBanner": {
+      "title": "HeroBanner",
+      "description": "Home page main hero carousel banner",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "tagline": { "type": "string" },
+        "taglineBn": { "type": "string" },
+        "title": { "type": "string" },
+        "titleBn": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "subtitleBn": { "type": "string" },
+        "targetCategoryOrUrl": { "type": "string" },
+        "buttonLabel": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "order": { "type": "number" }
+      },
+      "required": ["imageUrl", "title", "isActive"]
+    },
+    "StoreSettings": {
+      "title": "StoreSettings",
+      "description": "Global store profile, payment merchant numbers & delivery fees",
+      "type": "object",
+      "properties": {
+        "storeName": { "type": "string" },
+        "storeNameBn": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "bkashNumber": { "type": "string" },
+        "nagadNumber": { "type": "string" },
+        "deliveryFeeInsideDhaka": { "type": "number" },
+        "deliveryFeeOutsideDhaka": { "type": "number" },
+        "freeDeliveryThreshold": { "type": "number" }
+      },
+      "required": ["storeName", "phone"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Catalog products collection"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Purchase orders collection"
+    },
+    "/customers/{customerId}": {
+      "schema": "CustomerUser",
+      "description": "Registered customer profiles collection"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Product reviews collection"
+    },
+    "/settings/royalClub": {
+      "schema": "RoyalClubCampaignSettings",
+      "description": "Royal Club campaign settings document"
+    },
+    "/settings/store": {
+      "schema": "StoreSettings",
+      "description": "Store profile & settings document"
+    },
+    "/heroBanners/{bannerId}": {
+      "schema": "HeroBanner",
+      "description": "Hero carousel banners collection"
+    }
+  }
+}
